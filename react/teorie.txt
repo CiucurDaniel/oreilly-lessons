@@ -1,0 +1,69 @@
+React uses JSX which is no JavaScript
+which means it has to be transpiled by Babel
+which sould be automated by webpack.
+
+
+Complicated to setup initial application therefore -> npx create-react-app@latest hello-world
+Start a development server and serve it on localhost:3000 by default ->   npm start
+
+Build app and make it ready to be put on a server -> npm run build
+final resut is a HTML, CSS, JavaScript
+
+
+Create a react component
+-------------------------
+
+Steps:
+1. Create a component file
+2. Create a function 
+3. Resturn JSX from it
+
+Foo.js
+
+export function Foo() {
+    return <SomeComponent/>;
+}
+
+
+Functia with capital !!!
+JSX is considered a domain-specific language (DSL). It's JavaScript plus XML (yes really, is not HTML).
+XML more well formed.
+
+
+Data binding
+-------------
+Curly braces really important. This is how you add JavaScript to JSX.
+
+export function Person() {
+   const person  = getPerson(1234);
+   return (
+	<section> 
+		<img src= {person.photoUrl}>
+		{person.first} {person.last}
+	</section>
+  );
+}
+
+export const ListPeople = () => (
+ <>
+     { people.length ? <People/> : <p>No people available.</p> }
+ </>
+);
+
+
+presentation and container components -> search on Google.
+
+Expessions -> conditionals, looping, calling functions
+aka an expression is what you find on the right side of = equal.
+The ideea is how we get logic to JSX which is only presentation.
+
+if is not and expression is a statement ---> ? ternary operator works, ot use || like React pros
+
+for is not and expression, is a statement -> Array.prototype has a lot of methods which can work (concat, filter, flat, flapMap, join, slice)
+     so for a for loop you can use map to map each element of and array to something (aka a React component :) )
+     { people.map( p => <Person person=p />) }
+
+functions - with functions is more easily, have many nested functions which in the end return JSX.
+
+
+props -> props are esentially input parameters to a component.
